@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/Tarea1Datos.dir/main.cpp.o -o Tarea1Datos 
