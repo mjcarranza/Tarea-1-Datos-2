@@ -82,6 +82,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/user/CLionProjects/Tarea1Datos/PagedArray.cpp">
+			<Option target="Tarea1Datos"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/Tarea1Datos/PagedArray.h">
+			<Option target="Tarea1Datos"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/Tarea1Datos/QuickSort.cpp">
+			<Option target="Tarea1Datos"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/Tarea1Datos/QuickSort.h">
+			<Option target="Tarea1Datos"/>
+		</Unit>
 		<Unit filename="/home/user/CLionProjects/Tarea1Datos/main.cpp">
 			<Option target="Tarea1Datos"/>
 		</Unit>

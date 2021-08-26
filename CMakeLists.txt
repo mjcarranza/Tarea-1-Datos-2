@@ -3,4 +3,6 @@ project(Tarea1Datos)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Tarea1Datos main.cpp)
+set(Headers PagedArray.h QuickSort.h)
+
+add_executable(Tarea1Datos main.cpp PagedArray.cpp QuickSort.cpp)

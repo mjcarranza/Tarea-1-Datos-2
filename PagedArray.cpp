@@ -1,12 +1,12 @@
 //
-// Created by user on 21/8/21.
+// Created by Mario Carranza on 21/8/21.
 //
 
 #include "PagedArray.h"
 #include <bits/stdc++.h>
 using namespace std;
 
-bool buscar(int valor, vector<int>& refMarc){
+bool PagedArray::buscar(int valor, vector<int>& refMarc){
     for (int i = 0; i < refMarc.size(); ++i) {
         if (refMarc[i] == valor) {
             return true;
@@ -17,14 +17,14 @@ bool buscar(int valor, vector<int>& refMarc){
 
 // funcion para encontrar el marco que no ha sido usado recientemente
 // y podria utilizarse en el futuro despues del indice dado en pag[0...tamPag-1]
-int predecir(int pag[], vector<int>& refMarc, int tamPag, int indice){
+int PagedArray::predecir(int pag[], vector<int>& refMarc, int tamPag, int indice){
     int res = -1, comp = indice;
     for (int i = 0; i < refMarc.size(); ++i) {
         int j;
         for (int j = indice; j < tamPag; ++j) {
             if (refMarc[i] == pag[j]) {
                 if (j > comp) {
-                    com = j;
+                    comp = j;
                     res = i;
                 }
                 break;
@@ -38,7 +38,7 @@ int predecir(int pag[], vector<int>& refMarc, int tamPag, int indice){
 }
 
 // se utiliza el metodo de paginacion Optima:
-void pagOptima(int pag[], int tamPag, int nMarc){
+void PagedArray::pagOptima(int pag[], int tamPag, int nMarc){
     vector<int> refMarc;
     int aciertos = 0;
     float razonFallos = 0;
@@ -59,10 +59,43 @@ void pagOptima(int pag[], int tamPag, int nMarc){
     cout<<"Razon de Fallos: "<< razonFallos;
     cout<<"\n Rendimiento: "<< (1-razonFallos)*100<<"%";
 }
+
+/*
+ * Asume que un digito sera encontrado y la linea termina en kb
+ */
+int PagedArray::parseLine(char* linea){
+    int i = strlen(linea);
+    const char* p = linea;
+    while (*p <'0' || *p > '9') p++;
+    linea[i-3] = '\0';
+    i = atoi(p);
+    return i;
+}
+
+/*
+ * Metodo para saber la cantidad de memoria fisica utilizada por este programa en KB
+ */
+int PagedArray::getMemoryUsage(){
+    FILE* archivo = fopen("/proc/self/status", "r");
+    int resultado = -1;
+    char linea[128];
+
+    while (fgets(linea, 128, archivo) != NULL){
+        if (strncmp(linea, "VmSize:", 7) == 0){
+            resultado = parseLine(linea);
+            break;
+        }
+    }
+    fclose(archivo);
+    return resultado;
+}
+
+
+
 //int main(){
 //    int pag[]={1,2,3,4,5,6}; // numero de paginas del programa // ver si se3 puede calcular este numero utilizando un contador que se incrementa cada vez que se introduce un nuevo numero al txt
 //    int nMarc = 6; // este es el numero maximo de paginas que se pueden cargar a memoria
 //    int tamPag = sizeof (pag) / sizeof (pag[0]); // estes es el tamanio de cada pagina
 //    pagOptima(pag, tamPag, nMarc);
 //    return 0;
-}
+//}

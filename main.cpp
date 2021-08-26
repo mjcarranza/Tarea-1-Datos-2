@@ -1,30 +1,41 @@
 #include <iostream>
-#include <cstdlib>
 #include <fstream>
-#include <string.h>
+#include <vector>
+#include <sstream>
+#include "QuickSort.h"
+#include "PagedArray.h"
 
 using namespace std;
-string texto;   // para guardar all the texto del archivo .txt
 
+/*
+ * Metodo principal para la ejecucion del programa.
+ */
 int main(){
-    // leer texto en archivo .txt ----->>>
-    ifstream archivo1("numbers.txt");
+    // Variables locales para este metodo
+    string linea;
+    ifstream File;
+    vector <string> numeros;
 
-    ofstream archivo2("numbers.txt"); // abrir archivo de texto para escribir en el (si no existe se crea)
-    int number;
-    int convert;
-    cout<< "Introduzca la cantidad de numeros a introducir en el texto: ";
-    cin >> number;  // se pide al usuario el numero de numeros que desea en el archivo de texto
-    double value;
-    srand(time(NULL));
-    for (int i = 0; i < number; ++i) {
-        value = rand();     // generacion de numeros aleatorios  // hacer division entera para usar solo el numero entero
-        convert = (int) value;
-        string valueStr = to_string(convert);
-        archivo2 << texto << valueStr +", "; // insertar texto en archivo txt
+    // Se abre el archivo con los numeros enteros separados por coma.
+    File.open( "texto.txt" , ios::in);
+
+    // Se obtiene cada linea del archivo.
+    while(getline(File,linea)){
+        stringstream strstr(linea);
+        string numero;
+
+        // Se separa cada numero entero y se inserta en un vector.
+        while(getline(strstr,numero, ',')){
+            numeros.push_back(numero);
+        }
     }
-    archivo1.close();               // cerrar archivo .txt para liberar memoria
-    archivo2.close();
 
+    // No es necesario.
+    for (int i = 0; i < numeros.size(); ++i) {
+        cout<<numeros[i]<<endl;
+    }
+    // Se cierra el archivo txt.
+    File.close();
+
+    //Llamada a la clase PagedArray.
 }
-

@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/user/CLionProjects/Tarea1Datos/PagedArray.h
+bits/stdc++.h
+-
+
+/home/user/CLionProjects/Tarea1Datos/QuickSort.h
+
 /home/user/CLionProjects/Tarea1Datos/main.cpp
 iostream
 -
@@ -13,6 +19,10 @@ cstdlib
 -
 fstream
 -
-string.h
+cstring
 -
+QuickSort.h
+/home/user/CLionProjects/Tarea1Datos/QuickSort.h
+PagedArray.h
+/home/user/CLionProjects/Tarea1Datos/PagedArray.h
 

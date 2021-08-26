@@ -4,11 +4,15 @@
 
 #ifndef TAREA1DATOS_PAGEDARRAY_H
 #define TAREA1DATOS_PAGEDARRAY_H
+#include <bits/stdc++.h>
+
+using namespace std;
 
 class PagedArray {
     //Attributes
 
     //Methods
+    PagedArray()= default;
     bool buscar(int valor, vector<int>& refMarc);
 
     // funcion para encontrar el marco que no ha sido usado recientemente
@@ -17,6 +21,9 @@ class PagedArray {
 
     // se utiliza el metodo de paginacion Optima:
     void pagOptima(int pag[], int tamPag, int nMarc);
+
+    int parseLine(char* line);
+    int getMemoryUsage();
 };
 
 #endif //TAREA1DATOS_PAGEDARRAY_H
