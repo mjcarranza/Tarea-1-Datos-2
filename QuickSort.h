@@ -2,19 +2,15 @@
 // Created by Mario Carranza on 23/8/21.
 //
 
-#ifndef TAREA1DATOS_QUICKSORT_H
-#define TAREA1DATOS_QUICKSORT_H
-
-
 class QuickSort {
     // Atributos.
     int low;
     int high;
     int size;
-    int array[];
+    int array[]; // ver si es mejor cambiar el array por un vector
 
     // Constructor.
-    QuickSort(int array[], int l, int h, int tam){
+    QuickSort(int array[], int l, int h, int tam){  // ver si es mejor cambiar el array por un vector
         low = l;
         high = h;
         size = tam;
@@ -29,13 +25,11 @@ class QuickSort {
     /*
      * Metodo que divide el array en partes mas pequenas.
      */
-    static int division(int array[], int low, int high);
+    static int division(int array[], int low, int high);  // ver si es mejor cambiar el array por un vector
 
     /*
      * Metodo para ordenar un array.
      */
-    void sort(int array[], int low, int high);
+    void sort(int array[], int low, int high);  // ver si es mejor cambiar el array por un vector
 
 };
-
-#endif //TAREA1DATOS_QUICKSORT_H

@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/user/CLionProjects/Tarea1Datos/HashTable.cpp">
+			<Option target="Tarea1Datos"/>
+		</Unit>
+		<Unit filename="/home/user/CLionProjects/Tarea1Datos/HashTable.h">
+			<Option target="Tarea1Datos"/>
+		</Unit>
 		<Unit filename="/home/user/CLionProjects/Tarea1Datos/PagedArray.cpp">
 			<Option target="Tarea1Datos"/>
 		</Unit>

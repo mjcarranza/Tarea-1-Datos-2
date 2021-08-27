@@ -2,22 +2,24 @@
 #include <fstream>
 #include <vector>
 #include <sstream>
-#include "QuickSort.h"
 #include "PagedArray.h"
 
 using namespace std;
-
+PagedArray pagArr;
 /*
  * Metodo principal para la ejecucion del programa.
  */
 int main(){
     // Variables locales para este metodo
-    string linea;
-    ifstream File;
-    vector <string> numeros;
+    string linea; // Guarda el contenido de cada linea
+    ifstream File; // Hace referncia al archivo
+    vector <string> numerosStr; // Vector en el que se guardan los numeros extraidos del txt en formato string
+    vector <int> numerosInt; // Vector en el que se guardan los numeros extraidos del txt en formato integer
+    string tempStr;
+    int tempInt;
 
     // Se abre el archivo con los numeros enteros separados por coma.
-    File.open( "texto.txt" , ios::in);
+    File.open( "texto.txt" , ios::in);                      // SE PUEDE CAMBIAR PARA QUE LEA EL QUE EL USUARIO QUIERA
 
     // Se obtiene cada linea del archivo.
     while(getline(File,linea)){
@@ -26,16 +28,24 @@ int main(){
 
         // Se separa cada numero entero y se inserta en un vector.
         while(getline(strstr,numero, ',')){
-            numeros.push_back(numero);
+            numerosStr.push_back(numero);
         }
     }
-
-    // No es necesario.
-    for (int i = 0; i < numeros.size(); ++i) {
-        cout<<numeros[i]<<endl;
+    //int vec[numerosStr.size()];
+    for (int i = 0; i < numerosStr.size(); ++i) {
+        tempStr = numerosStr[i];
+        tempInt = stoi(tempStr);
+        //vec[i] = tempInt;
+        numerosInt.push_back(tempInt);
     }
-    // Se cierra el archivo txt.
-    File.close();
+
+//    // imprimir el vector // No es necesario. //
+//    for (int i = 0; i < numerosStr.size(); ++i) {
+//        cout<<vec[i]<<endl;
+//    }
+
+    File.close(); // Se cierra el archivo porque ya no se va a leer
 
     //Llamada a la clase PagedArray.
+    pagArr.fillPage(numerosInt);
 }

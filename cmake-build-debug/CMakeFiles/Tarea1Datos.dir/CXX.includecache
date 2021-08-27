@@ -10,19 +10,15 @@
 bits/stdc++.h
 -
 
-/home/user/CLionProjects/Tarea1Datos/QuickSort.h
-
 /home/user/CLionProjects/Tarea1Datos/main.cpp
 iostream
 -
-cstdlib
--
 fstream
 -
-cstring
+vector
 -
-QuickSort.h
-/home/user/CLionProjects/Tarea1Datos/QuickSort.h
+sstream
+-
 PagedArray.h
 /home/user/CLionProjects/Tarea1Datos/PagedArray.h
 

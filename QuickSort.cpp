@@ -6,9 +6,9 @@
 
 /*
  * Funcion de ordenamiento:
- * arr[] --> Array a ordenar
- * low   --> Indice inicial
- * high  --> Indice final
+ * @param arr[] --> Array a ordenar
+ * @param low   --> Indice inicial
+ * @param high  --> Indice final
  * */
 void QuickSort::sort(int *array, int low, int high) {
     if (low < high)

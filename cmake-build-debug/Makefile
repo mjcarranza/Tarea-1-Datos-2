@@ -142,6 +142,33 @@ Tarea1Datos/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea1Datos.dir/build.make CMakeFiles/Tarea1Datos.dir/build
 .PHONY : Tarea1Datos/fast
 
+HashTable.o: HashTable.cpp.o
+
+.PHONY : HashTable.o
+
+# target to build an object file
+HashTable.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea1Datos.dir/build.make CMakeFiles/Tarea1Datos.dir/HashTable.cpp.o
+.PHONY : HashTable.cpp.o
+
+HashTable.i: HashTable.cpp.i
+
+.PHONY : HashTable.i
+
+# target to preprocess a source file
+HashTable.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea1Datos.dir/build.make CMakeFiles/Tarea1Datos.dir/HashTable.cpp.i
+.PHONY : HashTable.cpp.i
+
+HashTable.s: HashTable.cpp.s
+
+.PHONY : HashTable.s
+
+# target to generate assembly for a file
+HashTable.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea1Datos.dir/build.make CMakeFiles/Tarea1Datos.dir/HashTable.cpp.s
+.PHONY : HashTable.cpp.s
+
 PagedArray.o: PagedArray.cpp.o
 
 .PHONY : PagedArray.o
@@ -232,6 +259,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Tarea1Datos"
+	@echo "... HashTable.o"
+	@echo "... HashTable.i"
+	@echo "... HashTable.s"
 	@echo "... PagedArray.o"
 	@echo "... PagedArray.i"
 	@echo "... PagedArray.s"
