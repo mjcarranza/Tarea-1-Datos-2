@@ -9,6 +9,7 @@ CMakeFiles/Tarea1Datos.dir/HashTable.cpp.o: ../QuickSort.h
 CMakeFiles/Tarea1Datos.dir/PagedArray.cpp.o: ../HashTable.h
 CMakeFiles/Tarea1Datos.dir/PagedArray.cpp.o: ../PagedArray.cpp
 CMakeFiles/Tarea1Datos.dir/PagedArray.cpp.o: ../PagedArray.h
+CMakeFiles/Tarea1Datos.dir/PagedArray.cpp.o: ../QuickSort.h
 
 CMakeFiles/Tarea1Datos.dir/QuickSort.cpp.o: ../QuickSort.cpp
 CMakeFiles/Tarea1Datos.dir/QuickSort.cpp.o: ../QuickSort.h

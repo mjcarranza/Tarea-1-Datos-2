@@ -29,29 +29,25 @@ PagedArray.h
 /home/user/CLionProjects/Tarea1Datos/PagedArray.cpp
 PagedArray.h
 /home/user/CLionProjects/Tarea1Datos/PagedArray.h
+QuickSort.h
+/home/user/CLionProjects/Tarea1Datos/QuickSort.h
 HashTable.h
 /home/user/CLionProjects/Tarea1Datos/HashTable.h
 bits/stdc++.h
+-
+tuple
 -
 
 /home/user/CLionProjects/Tarea1Datos/PagedArray.h
 bits/stdc++.h
 -
 
-/home/user/CLionProjects/Tarea1Datos/QuickSort.cpp
-QuickSort.h
-/home/user/CLionProjects/Tarea1Datos/QuickSort.h
-
 /home/user/CLionProjects/Tarea1Datos/QuickSort.h
 
 /home/user/CLionProjects/Tarea1Datos/main.cpp
 iostream
 -
-fstream
--
 vector
--
-sstream
 -
 PagedArray.h
 /home/user/CLionProjects/Tarea1Datos/PagedArray.h

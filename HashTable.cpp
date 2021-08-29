@@ -5,9 +5,10 @@
 #include "QuickSort.h" // usar el header para ordenar los elementos de las paginas que entran a esta clase por medio de la clase PagedArray
 using namespace std;
 
-/*
- * Funcion para buscar una pagina en especifico
- * @key numero de pagina
+/**
+ * Funcion para buscar una pagina en especifico.
+ * @param key Numero de pagina.
+ * @return
  */
 int HashTable::search(int key) {
     int hashValue = hashFunction(key);
@@ -26,25 +27,27 @@ int HashTable::hashFunction(int key) {
     return key % hashGroups;
 }
 
-/*
- * Funcion para insertar paginas a la tabla
- * @key es el numero de pagina
- * @value es el espacio en memoria donde inicia la pagina
+/**
+ * Funcion para insertar paginas a la tabla.
+ * @param key Numero de pagina.
+ * @param value Espacio en memoria donde inicia la pagina.
  */
 void HashTable::insert(int key, int value) {
     int hashValue = hashFunction(key);
     auto& cell = table[hashValue];
     auto bItr = begin(cell);
     bool keyExists = false;
+
     for (; bItr != end(cell) ; bItr++) {
+        /// Si la llave que estoy insertando es igual a otra ya existente esta reemplaza el viejo valor con el nuevo.
         if (bItr->first == key){
             keyExists = true;
             bItr->second = value;
-            cout<<"La llave introducida ya existe! Valor reemplzado!"<<endl;  // si la llave que estoy insertando es igual a otra ya existente
-                                                        // esta reemplaza el viejo valor con el nuevo
+            cout<<"La llave introducida ya existe! Valor reemplzado!"<<endl;
             break;
         }
     }
+    /// Si la llave no existe se inserta en la tabla con su respectivo valor.
     if (!keyExists){
         cell.emplace_back(key, value);
     }
