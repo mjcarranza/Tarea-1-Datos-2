@@ -1,7 +1,5 @@
 #include <iostream>
-#include <fstream>
 #include <vector>
-#include <sstream>
 #include "PagedArray.h"
 
 using namespace std;
@@ -18,7 +16,7 @@ int main(){
     string tempStr;
     int tempInt;
 
-    // Se abre el archivo con los numeros enteros separados por coma.
+    // Se abre el archivo que contiene los numeros enteros separados por coma.
     File.open( "texto.txt" , ios::in);                      // SE PUEDE CAMBIAR PARA QUE LEA EL QUE EL USUARIO QUIERA
 
     // Se obtiene cada linea del archivo.
@@ -31,21 +29,15 @@ int main(){
             numerosStr.push_back(numero);
         }
     }
-    //int vec[numerosStr.size()];
+    // Convertir lo leido en numeros
     for (int i = 0; i < numerosStr.size(); ++i) {
         tempStr = numerosStr[i];
         tempInt = stoi(tempStr);
-        //vec[i] = tempInt;
         numerosInt.push_back(tempInt);
     }
-
-//    // imprimir el vector // No es necesario. //
-//    for (int i = 0; i < numerosStr.size(); ++i) {
-//        cout<<vec[i]<<endl;
-//    }
-
     File.close(); // Se cierra el archivo porque ya no se va a leer
 
     //Llamada a la clase PagedArray.
     pagArr.fillPage(numerosInt);
+    cout<<"Cantidad de paginas en el programa: "<<pagArr.totalPages()<<endl;
 }

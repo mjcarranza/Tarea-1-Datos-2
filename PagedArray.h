@@ -1,7 +1,3 @@
-//
-// Created by Mario Carranza on 21/8/21.
-//
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -10,18 +6,13 @@ using namespace std;
  */
 class PagedArray {
     //Atributos
+    static const int pageSize= 256;
 private:
     vector<int> numbers;
-    int pageAmount;
-    // Arreglos para las paginas
-    vector<int> page1;
-    vector<int> page2;
-    vector<int> page3;
-    vector<int> page4;
-    vector<int> page5;
-    vector<int> page6;
+    int pages[1536];
 
 public:
+    int pageAmount;
     //Metodos
     bool buscar(int valor, vector<int>& refMarc);
 
@@ -32,11 +23,7 @@ public:
     void fillPage(vector<int> vec);
     int parseLine(char* line);
     int getMemoryUsage();
-    vector<int> fill1(int);
-    vector<int> fill2(int);
-    vector<int> fill3(int);
-    vector<int> fill4(int);
-    vector<int> fill5(int);
-    vector<int> fill6(int);
+    int totalPages();
+    void fill();
 
 };

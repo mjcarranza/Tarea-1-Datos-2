@@ -1,20 +1,20 @@
-//
-// Created by Mario Carranza on 26/8/21.
-//
-
 #include <list>
 #include <iostream>
+#include "PagedArray.h"
 using namespace std;
 
+/*
+ * Clase para el manejo de las paginas de memoria
+ */
 class HashTable{
 private:
-    static const int hashGroups = 10; // delimitar esta variable con el valor de la cantidad de paginas
+    PagedArray pgArr;  // esta declaricion es para inet5entar ver si puedo traer la cantidad de paginas que necesito
+    static const int hashGroups = 10000; // delimitar esta variable con el valor de la cantidad de paginas
     // Creacion de la tabla
-    list<pair<int , int>> table[hashGroups];
+
 public:
+    list<pair<int , long>> table[hashGroups];
     // Metodos
-    HashTable();
-    bool isEmpty() const;
     int hashFunction(int key);
     void insert(int key, int value);
     int search(int key);

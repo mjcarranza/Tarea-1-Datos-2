@@ -1,11 +1,11 @@
-//
-// Created by Mario Carranza on 21/8/21.
-//
-
 #include "PagedArray.h"
-
+#include "QuickSort.h"
+#include "HashTable.h"
 #include <bits/stdc++.h>
+#include <tuple>
 using namespace std;
+HashTable ht;
+QuickSort qst;
 
 bool PagedArray::buscar(int valor, vector<int>& refMarc){
     for (int i = 0; i < refMarc.size(); ++i) {
@@ -88,6 +88,7 @@ int PagedArray::getMemoryUsage(){
         }
     }
     fclose(archivo);
+    cout<<resultado<<endl;
     return resultado;
 }
 
@@ -95,84 +96,41 @@ int PagedArray::getMemoryUsage(){
  * Funcion para rellenar por primera vez las 6 paginas
  */
 void PagedArray::fillPage(vector<int> vec) {
+    int  low = 0;
+    int high = (256*6)-1;
     numbers = vec;
-    int indice = 0;
-    pageAmount = numbers.size() / 256; // este numero es el que me va a decir que tan larga es la hashTable
+    pageAmount = numbers.size() / 256; // este numero es el que me va a decir que tan larga es la hashTable  // 19.5 aproxx
+    int pageCont=0;
+    int pgsize = 256;
 
-    // Llenar las paginas con los elemntos del vector
-    fill1(0);
-    fill2(256);
-    fill3(512);
-    fill4(768);
-    fill5(1024);
-    fill6(1280);
+    // Llenar un array de 6 paginas con los elemntos del vector
+    fill();
 
     // llenar el hashTable con el numero de pagina y la direccion del espacio en memoria donde inicia
-    // continuar en la pagina 4 del cuaderno (flacha encerrada con circulo rojo)
+    for (int i = 1; i < pageAmount+1; ++i) {
+        ht.insert(i, pageCont * pgsize);
+        pageCont++;
+    }
+    // se obtiene la cantidad de memoria utilizada ()debe ser menor que 12 kB
+    getMemoryUsage();
+    // Ordenar el array
+    qst.sort(pages,low,high);
+
 }
 
 /*
  * Funcion para rellenar la pagina 1
  * @param ind sera la posicion en memoria donde empieza la pagina a rellenar
  */
-vector<int> PagedArray::fill1(int ind) {
-    int indice = ind;
-    // Ciclo para llenar la pagina 1
-    for (int i = 0; i < 256; ++i) {
-        page1.push_back(numbers[indice]);
-        indice++;
+void PagedArray::fill() {
+    // Ciclo para llenar el array de 6 paginas
+    for (int i = 0; i < 256*6; ++i) {
+        pages[i] = numbers[i];
     }
-    return page1;
 }
 
-vector<int> PagedArray::fill2(int ind) {
-    int indice = ind;
-    // Ciclo para llenar la pagina 2
-    for (int i = 0; i < 256; ++i) {
-        page2.push_back(numbers[indice]);
-        indice++;
-    }
-    return page2;
-}
-
-vector<int> PagedArray::fill3(int ind) {
-    int indice = ind;
-    // Ciclo para llenar la pagina 3
-    for (int i = 0; i < 256; ++i) {
-        page3.push_back(numbers[indice]);
-        indice++;
-    }
-    return page3;
-}
-
-vector<int> PagedArray::fill4(int ind) {
-    int indice = ind;
-    // Ciclo para llenar la pagina 4
-    for (int i = 0; i < 256; ++i) {
-        page4.push_back(numbers[indice]);
-        indice++;
-    }
-    return page4;
-}
-
-vector<int> PagedArray::fill5(int ind) {
-    int indice = ind;
-    // Ciclo para llenar la pagina 5
-    for (int i = 0; i < 256; ++i) {
-        page5.push_back(numbers[indice]);
-        indice++;
-    }
-    return page5;
-}
-
-vector<int> PagedArray::fill6(int ind) {
-    int indice = ind;
-    // Ciclo para llenar la pagina 6
-    for (int i = 0; i < 256; ++i) {
-        page6.push_back(numbers[indice]);
-        indice++;
-    }
-    return page6;
+int PagedArray::totalPages() {
+    return pageAmount;
 }
 
 

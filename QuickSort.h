@@ -1,22 +1,10 @@
-//
-// Created by Mario Carranza on 23/8/21.
-//
-
 class QuickSort {
+private:
     // Atributos.
-    int low;
-    int high;
-    int size;
-    int array[]; // ver si es mejor cambiar el array por un vector
-
-    // Constructor.
-    QuickSort(int array[], int l, int h, int tam){  // ver si es mejor cambiar el array por un vector
-        low = l;
-        high = h;
-        size = tam;
-        //int arr[size] = array;
-
-    }
+    int low = 0;
+    int high = 255;
+    int array[256*6]; // ver si es mejor cambiar el array por un vector
+public:
     /*
      * Metodo pra intercambiar los valores de las variables low y high.
      */
@@ -30,6 +18,5 @@ class QuickSort {
     /*
      * Metodo para ordenar un array.
      */
-    void sort(int array[], int low, int high);  // ver si es mejor cambiar el array por un vector
-
+    void sort(int *array, int l, int h);  // ver si es mejor cambiar el array por un vector
 };

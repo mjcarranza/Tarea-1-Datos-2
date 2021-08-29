@@ -1,7 +1,3 @@
-//
-// Created by Mario Carranza on 23/8/21.
-//
-
 #include "QuickSort.h"
 
 /*
@@ -10,7 +6,7 @@
  * @param low   --> Indice inicial
  * @param high  --> Indice final
  * */
-void QuickSort::sort(int *array, int low, int high) {
+void QuickSort::sort(int *array, int l, int h) {
     if (low < high)
     {
         /* pi es el indice de particion, arr[p] es ahora en el lugar correcto
@@ -55,3 +51,5 @@ void QuickSort::exchange(int* a, int* b)
     *a = *b;
     *b = temp;
 }
+
+

@@ -6,9 +6,43 @@
 
 #IncludeRegexTransform: 
 
+/home/user/CLionProjects/Tarea1Datos/HashTable.cpp
+iostream
+-
+list
+-
+HashTable.h
+/home/user/CLionProjects/Tarea1Datos/HashTable.h
+PagedArray.h
+/home/user/CLionProjects/Tarea1Datos/PagedArray.h
+QuickSort.h
+/home/user/CLionProjects/Tarea1Datos/QuickSort.h
+
+/home/user/CLionProjects/Tarea1Datos/HashTable.h
+list
+-
+iostream
+-
+PagedArray.h
+/home/user/CLionProjects/Tarea1Datos/PagedArray.h
+
+/home/user/CLionProjects/Tarea1Datos/PagedArray.cpp
+PagedArray.h
+/home/user/CLionProjects/Tarea1Datos/PagedArray.h
+HashTable.h
+/home/user/CLionProjects/Tarea1Datos/HashTable.h
+bits/stdc++.h
+-
+
 /home/user/CLionProjects/Tarea1Datos/PagedArray.h
 bits/stdc++.h
 -
+
+/home/user/CLionProjects/Tarea1Datos/QuickSort.cpp
+QuickSort.h
+/home/user/CLionProjects/Tarea1Datos/QuickSort.h
+
+/home/user/CLionProjects/Tarea1Datos/QuickSort.h
 
 /home/user/CLionProjects/Tarea1Datos/main.cpp
 iostream
