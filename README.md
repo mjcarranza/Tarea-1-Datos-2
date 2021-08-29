@@ -4,6 +4,6 @@ Mario Carranza Castillo
 Grupo: 2
 
 ### Descripción de uso:
-El algorito pedirá que se ingrese una cantidad de numeros específica la cual se va a utilizar para generar numeros aleatorios con el fin de que el algoritmo los ordene utilizando la paginación de memoria.
+El algoritmo leerá un archivo txt presente en este repositorio el cual contiene cierta cantidad de numeros desordenados. Luego de ejecutarse generará como resultado un archivo txt con los numeros ordenados. 
 
 El enlace a la documentacion está en el archivo HTML.
